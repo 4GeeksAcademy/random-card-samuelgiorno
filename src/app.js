@@ -18,7 +18,5 @@ function getSuiteClass(suit) {
     case "Spades": return "suit-spades";
     case "Hearts": return "suit-hearts";
     case "Clubs": return "suit-clubs";
-  }else{
-    case "Diamonds": return "suit-diamonds"
   }
 }

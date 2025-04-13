@@ -1,5 +1,4 @@
-window.onload = function() {
-  
+function refresh() {
   let cardNumber = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
   let suit = ["Diamonds", "Spades", "Hearts", "Clubs"];
   let randomCardNumber = Math.floor(Math.random() * cardNumber.length);
@@ -7,12 +6,14 @@ window.onload = function() {
   let finalSuit = suit[randomSuitNumber];
   
   document.getElementById('cardContent').innerHTML = cardNumber[randomCardNumber];
+  
   // Cambia el color del texto si es Hearts o Diamonds
-  if(finalSuit === "Diamonds" || finalSuit === "Hearts"){
+  if(finalSuit === "Diamonds" || finalSuit === "Hearts") {
     document.getElementById('cardContent').style.color = "red";
-  }else{
+  } else {
     document.getElementById('cardContent').style.color = "black";
   }
+
   document.getElementById('theCard').className = "";
   document.getElementById('theCard').classList.add("card");
   document.getElementById('theCard').classList.add(getSuiteClass(finalSuit));
@@ -25,4 +26,8 @@ function getSuiteClass(suit) {
     case "Hearts": return "suit-hearts";
     case "Clubs": return "suit-clubs";
   }
+}
+
+window.onload = function() {
+  refresh();
 }
